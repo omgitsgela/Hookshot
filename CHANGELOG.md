@@ -1,5 +1,69 @@
 # Changelog
 
+## [2.2.0-rc.2](https://github.com/NotRexed/Hookshot/compare/v2.2.0-rc.1...v2.2.0-rc.2) (2026-11-13)
+
+
+### Features
+
+* **agents:** pin test requests and results to commits ([#2830](https://github.com/NotRexed/Hookshot/issues/2830)) ([c1f6d17](https://github.com/NotRexed/Hookshot/commit/c1f6d17c91f808b9393fc08ee2e22194b52c0df1))
+* **builder:** an up-to-date game without a ticked DLSS or FSR 4 offers Update, not Play ([#2591](https://github.com/NotRexed/Hookshot/issues/2591)) ([5634175](https://github.com/NotRexed/Hookshot/commit/563417575dfdf369640fb405a9284e46408d147a))
+* **dev:** test a change against a base, as a pack of what it changes ([#2732](https://github.com/NotRexed/Hookshot/issues/2732)) ([ac11719](https://github.com/NotRexed/Hookshot/commit/ac11719642d12254004e6b0ae2e7907c36e1d462))
+* **menu:** a Quality preset "Auto (this PC)" that picks settings from the hardware and tunes them in play ([#2850](https://github.com/NotRexed/Hookshot/issues/2850)) ([f6cfd98](https://github.com/NotRexed/Hookshot/commit/f6cfd9876c4724b00dc84002b6fb6769cfd57d3c))
+* **scripts:** hookshot_bench.py, a repeatable benchmark route through the control bridge ([#2714](https://github.com/NotRexed/Hookshot/issues/2714)) ([6929c10](https://github.com/NotRexed/Hookshot/commit/6929c1047ba782839e4a4aae7128076399fa20f8))
+* **tests:** run_all.py --changed runs the checks that read what changed ([#2887](https://github.com/NotRexed/Hookshot/issues/2887)) ([8c359bc](https://github.com/NotRexed/Hookshot/commit/8c359bca1192d9c68d802bc99163be3b70156265))
+
+
+### Bug Fixes
+
+* **agents:** a mistyped date in a claim does not stop the test request replay ([#2949](https://github.com/NotRexed/Hookshot/issues/2949)) ([0eb55c4](https://github.com/NotRexed/Hookshot/commit/0eb55c42a1c292116e42af561831feab05deb121))
+* **builder:** the Linux game files page scrolls and keeps Build in view ([#3015](https://github.com/NotRexed/Hookshot/issues/3015)) ([9a017f0](https://github.com/NotRexed/Hookshot/commit/9a017f04e1dc6c3659cf997184a50e51ddb0a28b)), closes [#3006](https://github.com/NotRexed/Hookshot/issues/3006)
+* **input:** a pad's gyro stops with its buttons when the game is behind another window ([#2542](https://github.com/NotRexed/Hookshot/issues/2542)) ([0a5ec95](https://github.com/NotRexed/Hookshot/commit/0a5ec95e31267b0e3b31dcbb4d1bff096920bd49))
+* **memory:** give commit back near Windows' commit limit instead of crashing ([#2972](https://github.com/NotRexed/Hookshot/issues/2972)) ([e9975d6](https://github.com/NotRexed/Hookshot/commit/e9975d6c245275aaf89a34e8d17a6bbe8badab46))
+* readme's work/ffx-sdk, and the build log names an FSR 4 tick without AMD's license ([#2553](https://github.com/NotRexed/Hookshot/issues/2553)) ([1e2b112](https://github.com/NotRexed/Hookshot/commit/1e2b11292fc7cff8f1442be22ff3f0e8b15aabdc))
+* **release:** a draft keeps its tag when its notes are written, and a release just made is waited for ([#2626](https://github.com/NotRexed/Hookshot/issues/2626)) ([cf09841](https://github.com/NotRexed/Hookshot/commit/cf09841af03b5caaf4efc75d8f3c81722abd15d4))
+* **setup:** a rename blocked by a scanner is tried again, and the message carries Windows' error ([#3021](https://github.com/NotRexed/Hookshot/issues/3021)) ([6bc7eb8](https://github.com/NotRexed/Hookshot/commit/6bc7eb89629e2e7a29ab07b25927613151e8dae3))
+* **vk:** automatically query VK_EXT_device_fault on device lost when NV checkpoints and buffer markers are absent ([#2117](https://github.com/NotRexed/Hookshot/issues/2117)) ([ee64a96](https://github.com/NotRexed/Hookshot/commit/ee64a963b2ad6e127fbe79218f40898234d51b7f))
+
+
+### Code Refactoring
+
+* **builder:** name the DLSS license flag apart from the dialog text, and finish its comment ([#2565](https://github.com/NotRexed/Hookshot/issues/2565)) ([20d0734](https://github.com/NotRexed/Hookshot/commit/20d0734a316fc84ae526ede68ea834bd9fe191bb))
+
+
+### Build System
+
+* **linux:** ship third_party/zbic's sources so a build with NVIDIA DLSS compiles in the AppImage ([#2935](https://github.com/NotRexed/Hookshot/issues/2935)) ([e0e6092](https://github.com/NotRexed/Hookshot/commit/e0e60920991931f24cbe817bd5fff782ef4f5d9d))
+* **release:** a shipped pipeline list from a player's progress on Linux AMD, 1364 pipelines ([#3029](https://github.com/NotRexed/Hookshot/issues/3029)) ([2cb7d29](https://github.com/NotRexed/Hookshot/commit/2cb7d29ca1457509d2c3e719f64bb7a1b15cd57f))
+* **release:** a shipped pipeline list from an overnight tour of 21 areas, 3388 pipelines ([#3030](https://github.com/NotRexed/Hookshot/issues/3030)) ([1ffb7c6](https://github.com/NotRexed/Hookshot/commit/1ffb7c6ce3f8861b42cafac9a7ec8066c644ea2a))
+* **release:** the RTX 5090 fork list's note says what its build changed ([#2143](https://github.com/NotRexed/Hookshot/issues/2143) follow-up) ([#2703](https://github.com/NotRexed/Hookshot/issues/2703)) ([c60018e](https://github.com/NotRexed/Hookshot/commit/c60018ed895ae0cb29d4aba13264efaa699e77d5))
+
+
+### Continuous Integration
+
+* execute authored Vulkan fixtures on lavapipe ([#2866](https://github.com/NotRexed/Hookshot/issues/2866)) ([c86c3dd](https://github.com/NotRexed/Hookshot/commit/c86c3dd7606fcdb0ea9fdb300884b0f50d6d1239))
+
+
+### Documentation
+
+* add RTX 5050 Laptop 8 GB runs with and without RX_VK_COMPACT=1 on v2.1.0 ([#2889](https://github.com/NotRexed/Hookshot/issues/2889)) ([024e280](https://github.com/NotRexed/Hookshot/commit/024e280ac230cdd8e1365a44ad50795e52352ddc))
+* add tested-configurations rows for DLSS Frame Generation on an RTX 4090 (Windows) ([#2771](https://github.com/NotRexed/Hookshot/issues/2771)) ([108dac7](https://github.com/NotRexed/Hookshot/commit/108dac7fdf28ea91b5f32ac75014c52b3a9c2061))
+* add tested-configurations rows for the recorder thread on an RTX 4090 (Windows) ([#2912](https://github.com/NotRexed/Hookshot/issues/2912)) ([ce0681b](https://github.com/NotRexed/Hookshot/commit/ce0681ba1947096d6f14ceae27929d55bb9aad8a))
+* add the tested-configurations row for [#2748](https://github.com/NotRexed/Hookshot/issues/2748)'s game run ([#2757](https://github.com/NotRexed/Hookshot/issues/2757)) ([4614e71](https://github.com/NotRexed/Hookshot/commit/4614e71eb9f308a548c1eb0928aaa44603dc29f0))
+* tested configurations: RX 5500 XT 8 GB (RDNA1, no mesh shaders), Windows 11, v2.2.0-rc.1-6 ([#3028](https://github.com/NotRexed/Hookshot/issues/3028)) ([fad9677](https://github.com/NotRexed/Hookshot/commit/fad9677ad9d1b5a7cf7bdd100c2936077d620e97))
+* tested configurations: RX 5600 XT 6 GB (RDNA1, no mesh shaders), Windows 11, main de866017 ([#2715](https://github.com/NotRexed/Hookshot/issues/2715)) ([2546ab0](https://github.com/NotRexed/Hookshot/commit/2546ab01ab46f9395946a829fb551ee9961a99b7))
+* tested configurations: RX 7900 XTX, RADV Mesa 26.2.6, Ubuntu 24.04 GNOME X11 (v2.1.0) ([#2616](https://github.com/NotRexed/Hookshot/issues/2616)) ([c6335ff](https://github.com/NotRexed/Hookshot/commit/c6335ffdd2fcf5e4630277e0162879efdba2bb7d))
+* **tested:** record paired Linux RTX 4090 rolling results ([#2778](https://github.com/NotRexed/Hookshot/issues/2778)) ([fcd2a67](https://github.com/NotRexed/Hookshot/commit/fcd2a67607d8982b4d06fcecec4856a54ef3d6be))
+* **tested:** RTX 5080 on Windows, [#2306](https://github.com/NotRexed/Hookshot/issues/2306)'s native float add against the loop ([#2844](https://github.com/NotRexed/Hookshot/issues/2844)) ([cb34e7f](https://github.com/NotRexed/Hookshot/commit/cb34e7f2b222dc321c2ff91d2b71c144a4994486))
+* **tested:** RTX 5090 on Windows, Kokiri Forest: main against v2.1.0, 49f75dc8 and the last main before [#2602](https://github.com/NotRexed/Hookshot/issues/2602) ([#2840](https://github.com/NotRexed/Hookshot/issues/2840)) ([208de27](https://github.com/NotRexed/Hookshot/commit/208de2776e0c1aabed2d5ad6953d4029b670fc7a))
+* **tested:** RX 7700 XT on CachyOS, v2.2.0-rc.1 in Kokiri Forest ([#3014](https://github.com/NotRexed/Hookshot/issues/3014)) ([157e4b7](https://github.com/NotRexed/Hookshot/commit/157e4b7af75ad7f3becb95a015476ecb1fb24482))
+
+
+### Tests
+
+* one source cutter for the checks (tests/srccut.py), 80 checks moved to it ([#2914](https://github.com/NotRexed/Hookshot/issues/2914)) ([b4c8153](https://github.com/NotRexed/Hookshot/commit/b4c81530967ea3ef6e7a4cce7c96fde4c45cf2dc))
+* **saves:** cover newest-first directory order in the late-link case ([#2888](https://github.com/NotRexed/Hookshot/issues/2888)) ([4dd972a](https://github.com/NotRexed/Hookshot/commit/4dd972a85ed5291ba7747ead68fbc38cdd69ec8e))
+* **vk:** execute startup pool placement and fallback checks ([#2877](https://github.com/NotRexed/Hookshot/issues/2877)) ([20f5854](https://github.com/NotRexed/Hookshot/commit/20f58542ccc43ff57557e6e047b7f1afdba8c7ca))
+
 ## [2.2.0-rc.1](https://github.com/NotRexed/Hookshot/compare/v2.1.0...v2.2.0-rc.1) (2026-11-12)
 
 
